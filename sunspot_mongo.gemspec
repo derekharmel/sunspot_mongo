@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Brian Alexander"]
   s.email       = ["balexand@gmail.com"]
   s.homepage    = "https://github.com/balexand/sunspot_mongo"
-  s.summary     = %q{Sunspot integration for both Mongo Mapper and Mongoid.}
-  s.description = %q{Sunspot integration for both Mongo Mapper and Mongoid.}
+  s.summary     = %q{Sunspot search for both MongoDB. Supports Mongo Mapper and Mongoid.}
+  s.description = %q{Sunspot search for both MongoDB. Supports Mongo Mapper and Mongoid.}
 
   s.rubyforge_project = "sunspot_mongo"
 
