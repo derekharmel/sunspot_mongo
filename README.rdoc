@@ -1,3 +1,20 @@
+== NOT MAINTAINED
+
+I'm no longer maintaining this project. If anyone would like to take it over then please let me know. For my new projects I'm switching from Solr and Sunspot to {ElasticSearch}[http://www.elasticsearch.org/] and {Tire}[https://github.com/karmi/tire].
+
+=== Why Elasticsearch
+
+* Powerful and built on {Lucene}[http://lucene.apache.org/] (like Solr)
+* Schema free and dead simple to set up
+* Elegant and simple RESTful API
+* Simple sharding and replication
+* Beautiful website with excellent documentation
+
+=== Why Tire
+
+* Nice API (like Sunspot)
+* Integrates with ActiveModel instead of ActiveRecord. This means it works with MongoMapper out of the box.
+
 == Installation
 
 === Mongo Mapper
