@@ -23,7 +23,7 @@ module Sunspot
       end
 
       def load_all(ids)
-        @clazz.where(:_id.in => ids)
+        @clazz.find(ids)
       end
     end
   end
