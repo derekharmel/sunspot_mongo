@@ -43,6 +43,8 @@ Then search like usual:
   end
   search.results
 
+Note: Mongoid adds Article.search, use Article.solr_search instead.
+
 == More info
 
 See the {Sunspot documentation}[http://outoftime.github.com/sunspot/].
