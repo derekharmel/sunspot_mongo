@@ -47,7 +47,7 @@ Note: Mongoid adds Article.search, use Article.solr_search instead.
 
 == More info
 
-See the {Sunspot documentation}[http://outoftime.github.com/sunspot/].
+See the {Sunspot documentation}[http://sunspot.github.com/docs/index.html].
 
 == Compatibility
 
