@@ -5,7 +5,7 @@ namespace :sunspot do
       sunspot_models = if args[:models]
          args[:models].split('+').map{|m| m.constantize}
       else
-        all_files = Dir.glob(Rails.root.join('app', 'models', '*.rb'))
+        all_files = Dir.glob(Rails.root.join('app', 'models', '**', '*.rb'))
         all_models = all_files.map { |path| File.basename(path, '.rb').camelize.constantize }
         all_models.select { |m| m.include?(Sunspot::Mongo) and m.searchable? }
       end
