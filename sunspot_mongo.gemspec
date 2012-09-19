@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "sunspot_rails", [">= 0"]
+  s.add_dependency "bson", [">= 0"]
 
   s.add_development_dependency "bson_ext", [">= 0"]
   s.add_development_dependency "mongo_mapper", [">= 0"]
