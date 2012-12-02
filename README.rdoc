@@ -17,7 +17,7 @@ Then run:
 
 === Mongoid
 
-  gem 'bson_ext'
+  gem 'moped'
   gem 'mongoid'
   gem 'sunspot_mongo'
 
