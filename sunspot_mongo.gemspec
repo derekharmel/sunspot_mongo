@@ -18,14 +18,11 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency "sunspot_rails", [">= 0"]
+  s.add_dependency "sunspot_rails"
 
-  s.add_development_dependency "bson_ext", [">= 0"]
-  s.add_development_dependency "mongo_mapper", [">= 0"]
-  s.add_development_dependency "mongoid", [">= 0"]
-  s.add_development_dependency "rails", [">= 0"]
-  s.add_development_dependency "rspec", [">= 0"]
-  s.add_development_dependency "guard", [">= 0"]
-  s.add_development_dependency "guard-rspec", [">= 0"]
-  s.add_development_dependency "sunspot_solr", [">= 0"]
+  s.add_development_dependency "rails"
+  s.add_development_dependency "rspec"
+  s.add_development_dependency "guard"
+  s.add_development_dependency "guard-rspec"
+  s.add_development_dependency "sunspot_solr", '2.0.0'
 end
