@@ -1,0 +1,17 @@
+sudo: false
+
+services:
+  - mongodb
+
+rvm:
+  - 1.9.3
+  - 2.1.2
+
+env:
+  - MONGOID_VERSION=3
+  - MONGOID_VERSION=4
+  - MONGO_MAPPER_VERSION=0.13.1
+
+language: ruby
+
+cache: bundler

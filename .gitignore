@@ -2,3 +2,7 @@
 .bundle
 Gemfile.lock
 pkg/*
+solr.log
+solr.log.lck
+sunspot-solr.pid
+data
