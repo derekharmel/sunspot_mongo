@@ -7,7 +7,7 @@
 
 Put the following in your Gemfile:
 
-```
+```ruby
 gem 'mongo_mapper'
 gem 'sunspot_mongo'
 ```
