@@ -14,6 +14,7 @@ if ENV['MONGOID_VERSION']
 elsif ENV['MONGO_MAPPER_VERSION']
   version = ENV['MONGO_MAPPER_VERSION'] || '~> 0.13'
   gem 'mongo_mapper', version
+  gem 'bson_ext'
 end
 
 # Specify your gem's dependencies in sunspot_mongo.gemspec

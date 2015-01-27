@@ -25,7 +25,7 @@ def setup_servers_and_connections
       config.connect_to('sunspot_mongo_test')
     end
   elsif ENV['MONGO_MAPPER_VERSION']
-    connection = Mongo::Connection.new('localhost', 27_900)
+    connection = Mongo::Connection.new
     database = connection.db('sunspot_mongo_test')
     database.collections.reject { |col| col.name =~ /^system/ }.each(&:drop)
     MongoMapper.connection = connection
