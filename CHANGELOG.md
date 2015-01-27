@@ -1,3 +1,7 @@
+#### Next
+
+* Your contribution here.
+
 #### 1.1.0 (2015/01/27)
 
 * Changed `DataAccessor#load_all` to use the `.find` method for MongoMapper and Mongoid for loading a group of documents - [@derekharmel](https://github.com/derekharmel).
