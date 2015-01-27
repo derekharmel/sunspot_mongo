@@ -1,18 +1,18 @@
-require "rails"
-require "sunspot_mongo"
+require 'rails'
+require 'sunspot_mongo'
 
 ENV['MONGOID_VERSION'] = '4' unless ENV['MONGOID_VERSION'] || ENV['MONGO_MAPPER_VERSION']
 
 if ENV['MONGOID_VERSION']
-  require "mongoid"
+  require 'mongoid'
   require 'support/models/mongoid'
 elsif ENV['MONGO_MAPPER_VERSION']
-  require "mongo_mapper"
+  require 'mongo_mapper'
   require 'support/models/mongo_mapper'
 end
 
 # Load shared examples
-require "shared_examples"
+require 'shared_examples'
 
 def setup_servers_and_connections
   FileUtils.mkdir_p '/tmp/sunspot_mongo_test/'
@@ -25,9 +25,9 @@ def setup_servers_and_connections
       config.connect_to('sunspot_mongo_test')
     end
   elsif ENV['MONGO_MAPPER_VERSION']
-    connection = Mongo::Connection.new('localhost', 27900)
+    connection = Mongo::Connection.new('localhost', 27_900)
     database = connection.db('sunspot_mongo_test')
-    database.collections.reject{|col| col.name =~ /^system/}.each &:drop
+    database.collections.reject { |col| col.name =~ /^system/ }.each(&:drop)
     MongoMapper.connection = connection
     MongoMapper.database   = 'sunspot_mongo_test'
   end

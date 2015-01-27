@@ -15,7 +15,7 @@ class MongoMapperTestDocumentWithOptions
 
   key :title, String
 
-  searchable(:auto_index => false, :auto_remove => false) do
+  searchable(auto_index: false, auto_remove: false) do
     text :title
   end
 end

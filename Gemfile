@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 ENV['MONGOID_VERSION'] = '4' unless ENV['MONGOID_VERSION'] || ENV['MONGO_MAPPER_VERSION']
 
