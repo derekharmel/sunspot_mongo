@@ -57,6 +57,16 @@ search.results
 
 Note: Mongoid adds `Article.search`, use `Article.solr_search` instead.
 
+### Reindexing Objects
+
+If you are using Rails, objects are automatically indexed to Solr as a part of the save callbacks.
+
+If you make a change to the object's "schema" (code in the searchable block), you must reindex all objects so the changes are reflected in Solr. Run:
+
+```
+bundle exec rake sunspot:mongo:reindex
+```
+
 ## More info
 
 See the [Sunspot documentation](http://sunspot.github.com/docs/index.html).
