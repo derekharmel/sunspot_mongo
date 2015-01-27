@@ -23,7 +23,6 @@ rake sunspot:solr:start
 ### Mongoid
 
 ```ruby
-gem 'bson_ext'
 gem 'mongoid'
 gem 'sunspot_mongo'
 ```
