@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/sunspot_mongo.svg)](http://badge.fury.io/rb/sunspot_mongo)
 [![Build Status](https://travis-ci.org/derekharmel/sunspot_mongo.svg)](https://travis-ci.org/derekharmel/sunspot_mongo)
 
 ## Installation
