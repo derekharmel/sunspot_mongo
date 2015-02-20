@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/derekharmel/sunspot_mongo'
   s.summary     = 'Sunspot support for Mongo Mapper and Mongoid.'
   s.description = 'Sunspot support for Mongo Mapper and Mongoid.'
+  s.license     = 'MIT'
 
   s.rubyforge_project = 'sunspot_mongo'
 
