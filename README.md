@@ -35,6 +35,10 @@ rails g sunspot_rails:install
 rake sunspot:solr:start
 ```
 
+## Upgrading
+
+When upgrading to a new version, don't forget to check [UPGRADING](UPGRADING.md) for notes about breaking changes.
+
 ## Usage
 
 Add the following to your model (assuming you have a string field named "content"):
@@ -64,7 +68,7 @@ If you are using Rails, objects are automatically indexed to Solr as a part of t
 If you make a change to the object's "schema" (code in the searchable block), you must reindex all objects so the changes are reflected in Solr. Run:
 
 ```
-bundle exec rake sunspot:mongo:reindex
+bundle exec rake sunspot:reindex
 ```
 
 ## More info
