@@ -18,12 +18,25 @@ module Sunspot
     end
 
     class DataAccessor < Sunspot::Adapters::DataAccessor
+      attr_accessor :include
+
+      # inspired by how Sunspot does this for ActiveRecord
+      def initialize(clazz)
+        super(clazz)
+        @inherited_attributes = [:include]
+      end
+
       def load(id)
-        @clazz.find(id)
+        scope.find(id)
       end
 
       def load_all(ids)
-        @clazz.find(ids)
+        scope.find(ids)
+      end
+
+      def scope
+        sc = @clazz.criteria
+        @include ? sc.includes(@include) : sc
       end
     end
   end

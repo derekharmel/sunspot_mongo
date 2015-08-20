@@ -19,6 +19,20 @@ describe 'Sunspot::Mongo' do
   if ENV['MONGOID_VERSION']
     describe MongoidTestDocument do
       it_behaves_like 'a mongo document'
+      it 'eager-loads associations specified through :include option' do
+        test_doc = MongoidTestDocument.create title: 'So much foo, so little bar.'
+        test_tag = MongoidTestDocumentTag.create name: 'A tag'
+        test_doc.tags << test_tag
+        test_doc.save
+        test_doc.index!
+
+        search = MongoidTestDocument.solr_search(include: :tags) do
+          fulltext 'foo'
+        end
+        expect(search.hits.length).to eql 1
+        expect(search.results.first).to eql test_doc
+        expect(search.results.first.ivar(:tags)).to match [test_tag]
+      end
     end
     describe 'test documents with options' do
       it 'should set sunspot_options' do
