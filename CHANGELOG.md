@@ -1,10 +1,9 @@
-#### 1.2.0 (Next)
+#### 1.2.0 (2015/08/28)
 
 * [#9](https://github.com/derekharmel/sunspot_mongo/pull/9): Changed `DataAccessor` to fix support for eager loading of associations - [@cec](https://github.com/cec).
 * [#9](https://github.com/derekharmel/sunspot_mongo/pull/9): Changed `rake sunspot:mongo:reindex` to support namespaced models - [@cec](https://github.com/cec).
-* [#9](https://github.com/derekharmel/sunspot_mongo/pull/9): Renamed `rake sunspot:mongo:reindex` to `rake sunspot:reindex`, overriding Sunspot's original task - [@cec](https://github.com/cec).
+* [#9](https://github.com/derekharmel/sunspot_mongo/pull/9): Renamed `rake sunspot:mongo:reindex` to `sunspot:reindex`, overriding Sunspot's original task - [@cec](https://github.com/cec).
 * [#9](https://github.com/derekharmel/sunspot_mongo/pull/9): Added UPGRADING - [@cec](https://github.com/cec).
-* Your contribution here.
 
 #### 1.1.0 (2015/01/27)
 
