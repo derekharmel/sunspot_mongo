@@ -1,5 +1,6 @@
 require 'rails'
 require 'sunspot_mongo'
+require 'support/rails'
 
 ENV['MONGOID_VERSION'] = '4' unless ENV['MONGOID_VERSION'] || ENV['MONGO_MAPPER_VERSION']
 
