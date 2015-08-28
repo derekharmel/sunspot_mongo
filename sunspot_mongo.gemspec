@@ -26,5 +26,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard'
   s.add_development_dependency 'guard-rspec'
   s.add_development_dependency 'sunspot_solr', '2.0.0'
-  s.add_development_dependency 'rubocop', '0.28.0'
+  s.add_development_dependency 'rubocop', '0.33.0'
 end

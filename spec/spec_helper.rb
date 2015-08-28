@@ -18,7 +18,7 @@ require 'shared_examples'
 def setup_servers_and_connections
   FileUtils.mkdir_p '/tmp/sunspot_mongo_test/'
 
-  @solr_pid  = fork { `sunspot-solr start --log-file=solr.log --data-directory=data --log-level=INFO --port=8900` }
+  @solr_pid = fork { `sunspot-solr start --log-file=solr.log --data-directory=data --log-level=INFO --port=8900` }
   sleep 5
 
   if ENV['MONGOID_VERSION']
