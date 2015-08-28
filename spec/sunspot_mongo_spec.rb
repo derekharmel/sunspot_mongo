@@ -31,7 +31,7 @@ describe 'Sunspot::Mongo' do
         end
         expect(search.hits.length).to eql 1
         expect(search.results.first).to eql test_doc
-        expect(search.results.first.ivar(:tags)).to match [test_tag]
+        expect(search.results.first.tags).to match [test_tag]
       end
     end
     describe 'test documents with options' do

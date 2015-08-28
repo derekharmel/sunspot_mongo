@@ -35,7 +35,7 @@ module Sunspot
       end
 
       def scope
-        sc = @clazz.criteria
+        sc = @clazz.respond_to?(:criteria) ? @clazz.criteria : @clazz
         @include ? sc.includes(@include) : sc
       end
     end
