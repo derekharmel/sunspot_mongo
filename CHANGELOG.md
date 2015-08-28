@@ -1,3 +1,7 @@
+#### 1.2.1 (Next)
+
+* Your contribution here.
+
 #### 1.2.0 (2015/08/28)
 
 * [#9](https://github.com/derekharmel/sunspot_mongo/pull/9): Changed `DataAccessor` to fix support for eager loading of associations - [@cec](https://github.com/cec).
