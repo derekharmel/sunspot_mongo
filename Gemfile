@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
-ENV['MONGOID_VERSION'] = '4' unless ENV['MONGOID_VERSION'] || ENV['MONGO_MAPPER_VERSION']
+ENV['MONGOID_VERSION'] = '5.0' unless ENV['MONGOID_VERSION'] || ENV['MONGO_MAPPER_VERSION']
 
 if ENV['MONGOID_VERSION']
-  case version = ENV['MONGOID_VERSION'] || '~> 4.0'
-  when /4/
+  case version = ENV['MONGOID_VERSION']
+  when /^5/
+    gem 'mongoid', '~> 5.0'
+  when /^4/
     gem 'mongoid', '~> 4.0'
-  when /3/
+  when /^3/
     gem 'mongoid', '~> 3.1'
   else
     gem 'mongoid', version
