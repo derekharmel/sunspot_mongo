@@ -1,7 +1,6 @@
-#### 1.2.1 (Next)
+#### 1.2.1 (2015/10/20)
 
 * [#11](https://github.com/derekharmel/sunspot_mongo/pull/11): Support for Mongoid 5 - [@dblock](https://github.com/dblock).
-* Your contribution here.
 
 #### 1.2.0 (2015/08/28)
 
