@@ -22,9 +22,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'sunspot_rails'
 
   s.add_development_dependency 'rails'
+  s.add_development_dependency 'mime-types', '< 3'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'guard'
   s.add_development_dependency 'guard-rspec'
+  s.add_development_dependency 'listen', '<= 3.0.8'
   s.add_development_dependency 'sunspot_solr', '2.0.0'
   s.add_development_dependency 'rubocop', '0.33.0'
 end
