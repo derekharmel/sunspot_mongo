@@ -1,0 +1,33 @@
+#!/bin/bash
+
+solr_port=8900
+max_pings=100
+num_pings=0
+
+bundle exec sunspot-solr start \
+  --port=$solr_port            \
+  --data-directory=data        \
+  --log-file=solr.log          \
+  --log-level=INFO             \
+
+echo -n "Polling Solr..."
+
+while true; do
+  sleep 0.1
+
+  ((num_pings++))
+  echo -n "."
+  curl http://localhost:$solr_port/solr/admin/ping &> /dev/null
+
+  if [ "$?" -eq 0 ]; then
+    echo
+    echo -e "\033[32mSolr server running on port $solr_port\033[m"
+    break
+  elif [ "$num_pings" -ge "$max_pings" ]; then
+    echo
+    echo -e "\033[31mCannot find Solr server on port $solr_port: max number of pings ($max_pings) reached\033[m"
+    exit 1
+  fi
+done
+
+exit 0
