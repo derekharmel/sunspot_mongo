@@ -4,6 +4,17 @@ require 'sunspot_mongo'
 ROOT_PATH = Pathname(__FILE__).join('../..')
 Rails.define_singleton_method(:root) { ROOT_PATH }
 
+SOLR_PORT = '8900'
+SOLR_URL = "http://127.0.0.1:#{SOLR_PORT}/solr"
+
+begin
+  RSolr.connect(url: SOLR_URL).head('admin/ping')
+rescue RSolr::Error::ConnectionRefused
+  raise "Tests require a Solr server to be running on port #{SOLR_PORT}."
+else
+  Sunspot.config.solr.url = SOLR_URL
+end
+
 if ENV['MONGOID_VERSION']
   require 'mongoid'
   require 'support/models/mongoid'
@@ -31,8 +42,6 @@ end
 
 # Load shared examples
 require 'shared_examples'
-
-Sunspot.config.solr.url = 'http://127.0.0.1:8900/solr'
 
 RSpec.configure do |config|
   config.before :each do
