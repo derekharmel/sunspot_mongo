@@ -65,6 +65,18 @@ Note: Mongoid adds `Article.search`, use `Article.solr_search` instead.
 
 If you are using Rails, objects are automatically indexed to Solr as a part of the save callbacks.
 
+You can reindex a collection by calling `.reindex` directly on the model class. When using Mongoid, `#reindex` can be called on a search scope or criteria, reindexing only the matching objects.
+
+``` ruby
+Article.reindex
+
+# Mongoid only
+Article.pending.reindex
+Article.where(status: "posted").reindex
+
+```
+Note: `#reindex` on a MongoMapper search will always reindex the **entire** collection.
+
 If you make a change to the object's "schema" (code in the searchable block), you must reindex all objects so the changes are reflected in Solr. Run:
 
 ```

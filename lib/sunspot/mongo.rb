@@ -5,9 +5,39 @@ module Sunspot
   module Mongo
     def self.included(base)
       base.class_eval do
-        extend Sunspot::Rails::Searchable::ActsAsMethods
+        extend Sunspot::Mongo::ActsAsMethods
         Sunspot::Adapters::DataAccessor.register(DataAccessor, base)
         Sunspot::Adapters::InstanceAdapter.register(InstanceAdapter, base)
+      end
+    end
+
+    module ActsAsMethods
+      include Sunspot::Rails::Searchable::ActsAsMethods
+
+      def searchable(options = {}, &block)
+        super
+        extend Sunspot::Mongo::ClassMethods
+      end
+    end
+
+    module ClassMethods
+      #
+      # Updates indexes for all documents of a collection when called directly
+      # on the model class and immediately commit.
+      #
+      # When called on a Mongoid criteria, the indexing is scoped only to the
+      # documents returned by that criteria.
+      #
+      # When using MongoMapper, this method will always index the entire
+      # collection.
+      #
+      # This method accepts arbitrary arguments for compatibility, but does
+      # not implement any options.
+      #
+      def solr_index(*)
+        scope = respond_to?(:criteria) ? criteria : all
+        Sunspot.index! scope.select(&:indexable?)
+        Sunspot.commit
       end
     end
 

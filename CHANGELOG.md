@@ -1,6 +1,7 @@
 #### 1.2.2 (Next)
 
 * Your contribution here.
+* [#14](https://github.com/derekharmel/sunspot_mongo/pull/14): Implemented `reindex` on models and Mongoid searches - [@tonyta](https://github.com/tonyta).
 
 #### 1.2.1 (2015/10/20)
 
