@@ -3,6 +3,9 @@ sudo: false
 services:
   - mongodb
 
+before_script:
+  - bash ./ci/start_solr_server
+
 language: ruby
 
 cache: bundler

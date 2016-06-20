@@ -32,9 +32,6 @@ end
 # Load shared examples
 require 'shared_examples'
 
-@solr_pid = fork { `sunspot-solr start --log-file=solr.log --data-directory=data --log-level=INFO --port=8900` }
-sleep 5
-
 Sunspot.config.solr.url = 'http://127.0.0.1:8900/solr'
 
 RSpec.configure do |config|
