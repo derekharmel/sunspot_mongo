@@ -14,6 +14,7 @@ namespace :sunspot do
 
     sunspot_models.each do |model|
       puts "reindexing #{model}"
+      Sunspot.remove_all(model)
       model.all.each(&:index)
       Sunspot.commit
     end
